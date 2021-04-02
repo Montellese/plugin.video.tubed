@@ -20,9 +20,16 @@ DIALOG = xbmcgui.Dialog()
 MONITOR = xbmc.Monitor()
 
 
-def show_privacy_policy(context):
+def was_privacy_policy_accepted(context):
     last_revision_accepted = context.settings.get_privacy_policy()
     if last_revision_accepted != PRIVACY_POLICY_REVISION:
+        return False
+
+    return True
+
+
+def show_privacy_policy(context):
+    if not was_privacy_policy_accepted(context):
         LOG.debug('User has not accepted the current revision '
                   'of the privacy policy, prompting now...')
 
