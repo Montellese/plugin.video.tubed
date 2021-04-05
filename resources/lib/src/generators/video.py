@@ -167,6 +167,7 @@ def get_info_labels(video, snippet):
         'mediatype': 'video',
         'plot': description,
         'plotoutline': description,
+        'title': video_title,
         'originaltitle': video_title,
         'sorttitle': video_title,
         'studio': channel_name,
