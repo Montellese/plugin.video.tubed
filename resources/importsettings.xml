@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings version="1">
+  <section id="import" label="32100">
+    <category id="views" label="32108">
+      <group id="1">
+        <setting id="tubed.importviews" type="list[string]" label="32109">
+          <level>0</level>
+          <default></default>
+          <constraints>
+            <delimiter>|</delimiter>
+          </constraints>
+          <control type="list" format="string">
+            <multiselect>true</multiselect>
+          </control>
+        </setting>
+      </group>
+      <group id="2">
+        <setting id="tubed.maxitemsperview" type="integer" label="32110">
+          <level>0</level>
+          <default>50</default>
+          <constraints>
+            <minimum>10</minimum>
+            <step>10</step>
+            <maximum>100</maximum>
+          </constraints>
+          <control type="slider" format="integer" />
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>

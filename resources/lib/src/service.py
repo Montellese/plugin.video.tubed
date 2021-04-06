@@ -11,14 +11,19 @@
 import os
 
 import xbmc  # pylint: disable=import-error
+import xbmcaddon  # pylint: disable=import-error
 import xbmcgui  # pylint: disable=import-error
+import xbmcmediaimport  # pylint: disable=import-error
 import xbmcvfs  # pylint: disable=import-error
 
-from .constants import ADDONDATA_PATH
+from .constants import ADDONDATA_PATH, ADDON_ID
 from .lib.context import Context
+from .lib.logger import Log
 from .lib.memoizer import reset_cache
 from .lib.playback import CallbackPlayer
 
+
+LOG = Log('service', __file__)
 
 def invoke():
     reset_cache()
@@ -33,6 +38,28 @@ def invoke():
     window = xbmcgui.Window(10000)
     player = CallbackPlayer(context=context, window=window)
     monitor = xbmc.Monitor()
+
+    # register media provider
+    addon = xbmcaddon.Addon()
+    provider_id = 'plugin://%s' % ADDON_ID
+    provider_name = addon.getAddonInfo('name')
+    provider_icon_url = xbmc.translatePath(addon.getAddonInfo('icon'))
+    supported_media_types = set(
+        [
+            xbmcmediaimport.MediaTypeMusicVideo,
+        ]
+    )
+
+    # create the media provider
+    media_provider = xbmcmediaimport.MediaProvider(
+        provider_id, provider_name, provider_icon_url, supported_media_types
+    )
+
+    # add the media provider and activate it
+    if xbmcmediaimport.addAndActivateProvider(media_provider):
+        LOG.info('%s (%s) successfully added as a media provider' % (provider_name, provider_id))
+    else:
+        LOG.warning('failed to add %s (%s) as a media provider' % (provider_name, provider_id))
 
     while not monitor.abortRequested():
         if monitor.waitForAbort(sleep_time):

@@ -191,4 +191,12 @@ STRINGS = {
     'Would you like to enable InputStream Adaptive now?': 30255,
     'Settings': 30256,
     'No entries found': 30257,
+    'Retrieving %s...': 32001,
+    'Retrieving %s from %s...': 32002,
+    'Test authentication': 32102,
+    'Sign in with Google was successful': 32103,
+    'Sign in with Google failed': 32104,
+    'Tubed\'s Privacy Policy hasn\'t been accepted': 32105,
+    'Authentication succeeded': 32106,
+    'Authentication failed': 32107,
 }

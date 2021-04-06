@@ -1059,3 +1059,59 @@ msgstr ""
 msgctxt "#30257"
 msgid "No entries found"
 msgstr ""
+
+#empty strings from id 30258 to 32000
+
+msgctxt "#32001"
+msgid "Retrieving %s..."
+msgstr ""
+
+msgctxt "#32002"
+msgid "Retrieving %s from %s..."
+msgstr ""
+
+#empty strings from id 32003 to 32099
+
+msgctxt "#32100"
+msgid "Tubed"
+msgstr ""
+
+msgctxt "#32101"
+msgid "Access"
+msgstr ""
+
+msgctxt "#32102"
+msgid "Test authentication"
+msgstr ""
+
+msgctxt "#32103"
+msgid "Sign in with Google was successful"
+msgstr ""
+
+msgctxt "#32104"
+msgid "Sign in with Google failed"
+msgstr ""
+
+msgctxt "#32105"
+msgid "Tubed's Privacy Policy hasn't been accepted"
+msgstr ""
+
+msgctxt "#32106"
+msgid "Authentication succeeded"
+msgstr ""
+
+msgctxt "#32107"
+msgid "Authentication failed"
+msgstr ""
+
+msgctxt "#32108"
+msgid "Views"
+msgstr ""
+
+msgctxt "#32109"
+msgid "Import views"
+msgstr ""
+
+msgctxt "#32110"
+msgid "Maximum # of items per view"
+msgstr ""

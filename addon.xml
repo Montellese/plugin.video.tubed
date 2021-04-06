@@ -13,6 +13,11 @@
     </extension>
     <extension point="xbmc.python.script" library="resources/lib/script.py"/>
     <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="kodi.mediaimporter" discovery="" library="resources/lib/mediaimporter.py" observer="">
+        <canlookupprovider protocol="Tubed">false</canlookupprovider>
+        <providersettings>providersettings.xml</providersettings>
+        <importsettings>importsettings.xml</importsettings>
+    </extension>
     <extension point="xbmc.addon.metadata">
         <news>
 - fixup iso8601 duration parsing
